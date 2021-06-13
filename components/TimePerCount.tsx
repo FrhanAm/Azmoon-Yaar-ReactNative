@@ -3,9 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
 export default function TimePerCount(props: any) {
-
-    // const minutePerCount = Math.floor((props.testTime / props.testCount) / 60);
-    // const secondsPerCount = Math.floor(props.testTime % 60);
     const [secPerCount, setSec] = useState(Math.floor(props.testTime / props.testCount) * 60);
     
     useEffect(() => {
@@ -24,10 +21,36 @@ export default function TimePerCount(props: any) {
     }, [secPerCount])
 
   return (
-    <View>
-      <Text>
-          Time per Question: { Math.floor(secPerCount / 60) } : { secPerCount % 60 }
+    <View style={styles.container}>
+      <Text style={styles.header}>زمان باقی مانده هر سوال</Text>
+      <Text style={styles.text}>
+          { Math.floor(secPerCount / 60) } : { secPerCount % 60 }
       </Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#a9c6de",
+    borderRadius: 10,
+    marginTop: "5%",
+    paddingTop: "2%",
+  },
+  header: {
+    color: "#666666",
+    fontFamily: "Vazir",
+    fontSize: 18,
+    paddingBottom: "2%",
+    textAlign: 'center'
+  },
+  text: {
+    backgroundColor: "#f5f5f5",
+    borderRadius: 10,
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 0,
+    fontFamily: "Shabnam",
+    padding: "5%",
+    textAlign: "center"
+  }
+});

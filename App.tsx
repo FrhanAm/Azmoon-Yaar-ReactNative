@@ -1,12 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
+import * as Font from "expo-font";
+import Apploading from "expo-app-loading";
 import React, { useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import Home from "./components/Home";
 import TestPage from "./components/TestPage";
 
+const getFonts = () =>
+  Font.loadAsync({
+    Vazir: require("./assets/fonts/vazir.ttf"),
+    Yekan: require("./assets/fonts/yekan.ttf"),
+    Shabnam: require("./assets/fonts/shabnam.ttf")
+  });
+
 export default function App() {
+  const [fontsloaded, setFontsLoaded] = useState(false);
+
   const [ testTime, setTestTime ] = useState("");
   const [ testCount, setTestCount ] = useState("");
+  const [ initialTime, setInitTime ] = useState("");
+  const [ initialCount, setInitCount ] = useState("");
   const [ startBtn, setStartBtn ] = useState(false);
 
   const props = {
@@ -15,29 +28,37 @@ export default function App() {
     testCount,
     setTestCount,
     startBtn,
-    setStartBtn
+    setStartBtn,
+    initialCount,
+    setInitCount,
+    initialTime,
+    setInitTime
   };
 
-  return (
-    <View>
-      <View style={styles.topBar}>
-        <Text>TopBar</Text>
-      </View>
+  if (fontsloaded) {
+    return (
+    <View style={styles.container}>
       {startBtn === false ? <Home { ...props } /> : <TestPage { ...props } />}
-      <StatusBar style="auto" />
     </View>
   );
+  } else {
+    return (
+      <Apploading
+        startAsync={getFonts}
+        onFinish={() => {
+          setFontsLoaded(true);
+        }}
+        onError={console.warn}
+      />
+    );
+  }
+
+  
 }
 
 const styles = StyleSheet.create({
-  topBar: {
-    alignSelf: 'stretch',
-    height: 52,
-    flexDirection: 'row', // row
-    backgroundColor: 'yellow',
-    alignItems: 'center',
-    justifyContent: 'space-evenly', // center, space-around
-    paddingLeft: 10,
-    paddingRight: 10,
+  container: {
+    backgroundColor: '#02576c',
+    height: "100%"
   }
-});
+})

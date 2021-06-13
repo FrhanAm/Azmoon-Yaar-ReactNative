@@ -1,20 +1,39 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, View, Button } from 'react-native';
+import { StyleSheet, View, Pressable, Text } from 'react-native';
 
 export default function StartBtn(props: any) {
 
   return (
-    <View>
-      <Button 
+    <View style={styles.container}>
+      <Pressable style={styles.button}
         onPress={() => {
           if (props.testTime !== "" && props.testCount !== "") {
             props.setStartBtn(!props.startBtn);
           }
         }}
-        title="strat"
-      />
+      >
+        <Text style={styles.text}>شروع</Text>
+      </Pressable>
       <StatusBar style="auto" />
     </View>
   );
 }
+
+const styles = StyleSheet.create ({
+  container: {
+    paddingTop: "5%"
+  },
+  button: {
+    backgroundColor: "#02576c",
+    borderRadius: 10,
+    padding: "5%",
+    paddingBottom: "6%",
+    alignItems: 'center'
+  },
+  text: {
+    color: "#fff",
+    fontFamily: "Shabnam",
+    fontSize: 18
+  }
+});
