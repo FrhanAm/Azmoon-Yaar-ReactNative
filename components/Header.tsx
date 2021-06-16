@@ -20,7 +20,7 @@ export default function Header(props: any) {
 
 const styles = StyleSheet.create({
   topBar: {
-    // alignSelf: 'stretch',
+    alignSelf: 'stretch',
     height: "15%",
     flexDirection: 'row', // row
     backgroundColor: '#02576c',
@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontFamily: "Shabnam",
     fontSize: 30,
-    // paddingTop: "5%"
   },
   logo:
   {

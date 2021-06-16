@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import * as Font from "expo-font";
 import Apploading from "expo-app-loading";
 import React, { useState } from 'react';
@@ -8,8 +7,6 @@ import TestPage from "./components/TestPage";
 
 const getFonts = () =>
   Font.loadAsync({
-    Vazir: require("./assets/fonts/vazir.ttf"),
-    Yekan: require("./assets/fonts/yekan.ttf"),
     Shabnam: require("./assets/fonts/shabnam.ttf")
   });
 

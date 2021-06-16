@@ -1,6 +1,6 @@
 import { Alert } from "react-native";
 
-export default function alert (testCount: number, testTime: number, initCount: number, initTime: number) {
+export default function alert (testCount: number, testTime: number, initCount: number) {
     if (testTime === 0) {
         if (testCount !== 0) {
             Alert.alert(
@@ -16,7 +16,7 @@ export default function alert (testCount: number, testTime: number, initCount: n
     } else {
             Alert.alert(
             "پیام سیستم",
-            `شما به همه ی سوالات پاسخ دادید و ${initTime - testTime} زمان باقی مانده`
+            `شما به همه ی سوالات پاسخ دادید و ${testTime % 60} : ${Math.floor(testTime / 60)} از زمان شما باقی مانده`
             )
     }
 }

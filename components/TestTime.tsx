@@ -24,14 +24,13 @@ export default function MyComponent(props: any) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#a9c6de",
     borderRadius: 10,
     marginTop: "5%",
     paddingTop: "2%",
   },
   text: {
     color: "#666666",
-    fontFamily: "Vazir",
+    fontFamily: "Shabnam",
     fontSize: 18,
     paddingBottom: "2%",
     textAlign: 'center'
@@ -39,8 +38,6 @@ const styles = StyleSheet.create({
   textInput: {
     backgroundColor: "#f5f5f5",
     borderRadius: 10,
-    borderTopLeftRadius: 0,
-    borderTopRightRadius: 0,
     fontFamily: "Shabnam",
     padding: "5%",
     textAlign: "center"

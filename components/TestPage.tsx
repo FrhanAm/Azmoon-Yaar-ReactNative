@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 import Header from "./Header";
 import ShowCount from "./ShowCount";
@@ -70,7 +70,6 @@ const styles = StyleSheet.create ({
     height: "100%",
     padding: "10%",
     paddingTop: "4%"
-    // paddingTop: "35%"
   },
   button: {
     backgroundColor: "#02576c",

@@ -26,11 +26,6 @@ export default function Home(props: any) {
       setInitTime: props.setInitTime
     }
 
-    const btnProps = {
-        startBtn: props.startBtn,
-        setStartBtn: props.setStartBtn
-    }
-
   return (
     <View>
       <Header title="آزمون یار" />

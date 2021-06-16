@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
@@ -16,7 +15,7 @@ export default function TimePerCount(props: any) {
           setSec(Math.floor(props.testTime / props.testCount));
           clearInterval(timer);
       }
-    }, 1000);
+    }, 1000 - new Date().getMilliseconds());
     return () => clearInterval(timer);
     }, [secPerCount])
 
@@ -32,14 +31,13 @@ export default function TimePerCount(props: any) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#a9c6de",
     borderRadius: 10,
     marginTop: "5%",
     paddingTop: "2%",
   },
   header: {
     color: "#666666",
-    fontFamily: "Vazir",
+    fontFamily: "Shabnam",
     fontSize: 18,
     paddingBottom: "2%",
     textAlign: 'center'
@@ -47,8 +45,6 @@ const styles = StyleSheet.create({
   text: {
     backgroundColor: "#f5f5f5",
     borderRadius: 10,
-    borderTopLeftRadius: 0,
-    borderTopRightRadius: 0,
     fontFamily: "Shabnam",
     padding: "5%",
     textAlign: "center"

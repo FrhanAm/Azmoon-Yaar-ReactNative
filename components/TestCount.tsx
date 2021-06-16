@@ -11,7 +11,6 @@ export default function TestCount(props: any) {
         style={styles.textInput}
         placeholder="تعداد سوالات را وارد کنید"
         placeholderTextColor="#b3b3b3"
-        // value={props.testCount}
         onChangeText={(val) => {
           props.setTestCount(val)
           props.setInitCount(val)
@@ -25,13 +24,12 @@ export default function TestCount(props: any) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#a9c6de",
     borderRadius: 10,
     paddingTop: "2%",
   },
   text: {
     color: "#666666",
-    fontFamily: "Vazir",
+    fontFamily: "Shabnam",
     fontSize: 18,
     paddingBottom: "2%",
     textAlign: 'center'
@@ -39,8 +37,6 @@ const styles = StyleSheet.create({
   textInput: {
     backgroundColor: "#f5f5f5",
     borderRadius: 10,
-    borderTopLeftRadius: 0,
-    borderTopRightRadius: 0,
     fontFamily: "Shabnam",
     padding: "5%",
     textAlign: "center"
