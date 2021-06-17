@@ -6,7 +6,11 @@ export default function StartBtn(props: any) {
 
   return (
     <View style={styles.container}>
-      <Pressable style={styles.button}
+      <Pressable 
+      style={({ pressed }) => [
+        { backgroundColor: pressed ? '#660033' : '#02576c' },
+        styles.button
+      ]}
         onPress={() => {
           if (props.testTime !== "" && props.testCount !== "") {
             props.setStartBtn(!props.startBtn);
@@ -25,7 +29,6 @@ const styles = StyleSheet.create ({
     paddingTop: "5%"
   },
   button: {
-    backgroundColor: "#02576c",
     borderRadius: 10,
     padding: "5%",
     paddingBottom: "6%",

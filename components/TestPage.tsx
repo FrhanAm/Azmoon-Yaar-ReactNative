@@ -39,14 +39,22 @@ export default function TestPage(props: any) {
         <ShowCount { ...timeProps } { ...countProps } { ...btnProps } {...initialCount} {...initialTime} />
         <ShowTime { ...timeProps } { ...countProps } { ...btnProps } {...initialCount} {...initialTime} />
         <TimePerCount { ...countProps } { ...timeProps } { ...btnProps }/>
-        <Pressable style={styles.button}
+        <Pressable 
+        style={({ pressed }) => [
+        { backgroundColor: pressed ? '#660033' : '#02576c' },
+        styles.button
+      ]}
         onPress={() => {
               props.setTestCount(props.testCount - 1);
             }}
       >
         <Text style={styles.text}>سوال بعد</Text>
       </Pressable>
-        <Pressable style={styles.button}
+        <Pressable 
+        style={({ pressed }) => [
+        { backgroundColor: pressed ? '#660033' : '#02576c' },
+        styles.button
+      ]}
         onPress={() => {
                 props.setTestTime("");
                 props.setTestCount("");
@@ -72,7 +80,6 @@ const styles = StyleSheet.create ({
     paddingTop: "4%"
   },
   button: {
-    backgroundColor: "#02576c",
     borderRadius: 10,
     padding: "5%",
     paddingBottom: "6%",
