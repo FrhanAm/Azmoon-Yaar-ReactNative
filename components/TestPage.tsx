@@ -41,7 +41,7 @@ export default function TestPage(props: any) {
         <TimePerCount { ...countProps } { ...timeProps } { ...btnProps }/>
         <Pressable 
         style={({ pressed }) => [
-        { backgroundColor: pressed ? '#660033' : '#02576c' },
+        { backgroundColor: pressed ? '#048daf' : '#02576c' },
         styles.button
       ]}
         onPress={() => {
@@ -52,7 +52,7 @@ export default function TestPage(props: any) {
       </Pressable>
         <Pressable 
         style={({ pressed }) => [
-        { backgroundColor: pressed ? '#660033' : '#02576c' },
+        { backgroundColor: pressed ? '#048daf' : '#02576c' },
         styles.button
       ]}
         onPress={() => {

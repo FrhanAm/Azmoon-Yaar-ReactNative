@@ -8,7 +8,7 @@ export default function StartBtn(props: any) {
     <View style={styles.container}>
       <Pressable 
       style={({ pressed }) => [
-        { backgroundColor: pressed ? '#660033' : '#02576c' },
+        { backgroundColor: pressed ? '#048daf' : '#02576c' },
         styles.button
       ]}
         onPress={() => {
